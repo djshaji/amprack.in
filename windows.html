@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Violet - Lightweight LV2 Plugin Host for Windows. Real-time audio processing with WASAPI backend.">
+    <title>Violet - Windows LV2 Plugin Host | Amp Rack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
+                        <span class="logo-icon">🎸</span>
+                        <span class="logo-text">AMP RACK</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="windows.html" class="active">Windows</a></li>
+                    <li><a href="linux.html">Linux</a></li>
+                    <li><a href="index.html#download">Download</a></li>
+                    <li><a href="https://github.com/djshaji/violet" target="_blank">GitHub</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero platform-hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="platform-badge">Windows</div>
+                    <h1 class="hero-title">
+                        Violet
+                        <span class="gradient-text">LV2 Plugin Host</span>
+                    </h1>
+                    <p class="hero-subtitle">Lightweight LV2 plugin host for real-time audio processing on Windows with WASAPI backend and low-latency performance.</p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/djshaji/violet/releases/latest" class="btn btn-primary" target="_blank">
+                            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                            </svg>
+                            Download for Windows
+                        </a>
+                        <a href="#features" class="btn btn-secondary">View Features</a>
+                    </div>
+                    <div class="version-info">
+                        <span class="version-badge">v0.78</span>
+                        <span class="version-text">Latest Release • 94% Complete</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <img src="https://github.com/user-attachments/assets/4d64c90a-3a7b-4e20-bdeb-fa14aadbc37d" alt="Violet Windows Screenshot">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Windows Features</h2>
+                <p class="section-subtitle">Professional audio processing for Windows 10/11</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎛️</div>
+                    <h3>WASAPI Audio Backend</h3>
+                    <p>Low-latency audio pipeline (< 10ms roundtrip) with configurable buffer sizes and multi-channel support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>LV2 Plugin Support</h3>
+                    <p>Full LILV integration for LV2 plugin discovery, loading, and real-time parameter automation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎹</div>
+                    <h3>MIDI Integration</h3>
+                    <p>Windows MIDI API integration with input handling and parameter mapping for plugin control.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Modern UI</h3>
+                    <p>Plugin browser with search, category filtering, drag-and-drop support, and inline parameter controls.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌗</div>
+                    <h3>Theme System</h3>
+                    <p>Light, Dark, and System themes with Windows 10/11 dark mode title bar integration.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Session Management</h3>
+                    <p>Save and load complete plugin chains with all parameters preserved in .violet files.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Audio Settings</h3>
+                    <p>Select input/output devices, configure sample rates (44.1-192kHz), and buffer sizes (64-2048 samples).</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Performance Monitoring</h3>
+                    <p>Real-time CPU usage and latency monitoring in status bar with detailed error messages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Auto-Start Engine</h3>
+                    <p>Audio engine starts automatically on launch with hot-swap device support without restart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Installation</h2>
+            </div>
+            <div class="install-options">
+                <div class="install-card recommended">
+                    <div class="install-badge">Recommended</div>
+                    <h3>Windows Installer</h3>
+                    <ol class="install-steps">
+                        <li>Download <code>violet-0.78-setup.exe</code> from the releases page</li>
+                        <li>Run the installer (requires administrator privileges)</li>
+                        <li>The installer will automatically:
+                            <ul>
+                                <li>Install to <code>C:\Program Files\Violet</code></li>
+                                <li>Create Start Menu and desktop shortcuts</li>
+                                <li>Set up the LV2_PATH environment variable</li>
+                                <li>Register in Add/Remove Programs</li>
+                            </ul>
+                        </li>
+                        <li>Launch Violet from Start Menu or desktop shortcut</li>
+                    </ol>
+                    <a href="https://github.com/djshaji/violet/releases/latest" class="btn btn-primary" target="_blank">Download Installer</a>
+                </div>
+                <div class="install-card">
+                    <h3>Manual Installation</h3>
+                    <ol class="install-steps">
+                        <li>Download the portable <code>violet.exe</code></li>
+                        <li>Place LV2 plugins in a directory</li>
+                        <li>Set <code>LV2_PATH</code> environment variable or run from plugin directory</li>
+                        <li>Launch <code>violet.exe</code></li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="requirements-section text-dark" style="color: #000;">
+                <h3>Requirements</h3>
+                <ul class="requirements-list">
+                    <li><strong>OS:</strong> Windows 10 or later (64-bit)</li>
+                    <li><strong>Plugins:</strong> LV2 plugins (scans standard LV2 paths)</li>
+                    <li><strong>Audio:</strong> WASAPI-compatible interface (built into Windows)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="quick-start">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Start Guide</h2>
+            </div>
+            <div class="quick-start-grid">
+                <div class="quick-start-item">
+                    <div class="step-number">1</div>
+                    <h3>First Launch</h3>
+                    <p>The audio engine starts automatically with your default audio device. If no device is detected, go to Audio → Audio Settings.</p>
+                </div>
+                <div class="quick-start-item">
+                    <div class="step-number">2</div>
+                    <h3>Loading Plugins</h3>
+                    <p>Browse available LV2 plugins in the left panel. Use search to filter by name. Double-click or drag-and-drop to add plugins to your chain.</p>
+                </div>
+                <div class="quick-start-item">
+                    <div class="step-number">3</div>
+                    <h3>Controlling Plugins</h3>
+                    <p>Adjust parameters with inline sliders. Changes apply immediately. Use bypass button (B) to disable temporarily or X to remove.</p>
+                </div>
+                <div class="quick-start-item">
+                    <div class="step-number">4</div>
+                    <h3>Audio Configuration</h3>
+                    <p>Go to Audio → Audio Settings to configure input/output devices, sample rate (44.1-192kHz), and buffer size (64-2048 samples).</p>
+                </div>
+                <div class="quick-start-item">
+                    <div class="step-number">5</div>
+                    <h3>Managing Sessions</h3>
+                    <p>File → Save Session saves your plugin chain with all parameters. File → Open Session loads previously saved setups (.violet files).</p>
+                </div>
+                <div class="quick-start-item">
+                    <div class="step-number">6</div>
+                    <h3>Monitoring Performance</h3>
+                    <p>CPU usage and latency are displayed in the status bar. High CPU usage? Increase buffer size in Audio Settings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Building Section -->
+    <section class="building-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Building from Source</h2>
+            </div>
+            <div class="build-content">
+                <div class="build-method">
+                    <h3>Cross-compilation from Linux</h3>
+                    <div class="code-block">
+                        <pre><code># Prerequisites (Fedora)
+sudo dnf install meson ninja-build mingw64-gcc mingw64-gcc-c++ \
+                 mingw64-lilv mingw64-lv2
+
+# Set up build directory
+meson setup build --cross-file cross-mingw64.txt
+
+# Compile
+ninja -C build
+
+# Output: build/violet.exe and build/violet-console.exe</code></pre>
+                    </div>
+                </div>
+                <div class="build-method">
+                    <h3>Quick Build Script</h3>
+                    <div class="code-block">
+                        <pre><code>./build.sh</code></pre>
+                    </div>
+                </div>
+                <div class="build-method">
+                    <h3>Building the Installer</h3>
+                    <div class="code-block">
+                        <pre><code># Requires NSIS
+mkdir -p violet-dist
+cp build/violet.exe violet-dist/
+cp build/violet-console.exe violet-dist/
+cp README.md violet-dist/README.txt
+
+makensis violet-installer.nsi
+# Output: violet-0.78-setup.exe</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Status -->
+    <section class="project-status">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Status</h2>
+                <p class="section-subtitle">Overall Completion: 94%</p>
+            </div>
+            <div class="status-grid">
+                <div class="status-item completed">
+                    <div class="status-icon">✅</div>
+                    <h3>Phase 1: Core Infrastructure</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-label">100%</span>
+                </div>
+                <div class="status-item completed">
+                    <div class="status-icon">✅</div>
+                    <h3>Phase 2: Audio Engine Foundation</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-label">100%</span>
+                </div>
+                <div class="status-item completed">
+                    <div class="status-icon">✅</div>
+                    <h3>Phase 3: Plugin Management</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-label">100%</span>
+                </div>
+                <div class="status-item completed">
+                    <div class="status-icon">✅</div>
+                    <h3>Phase 4: User Interface</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <span class="progress-label">100%</span>
+                </div>
+                <div class="status-item in-progress">
+                    <div class="status-icon">🔄</div>
+                    <h3>Phase 5: Advanced Features</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-label">70%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Violet for Windows</h4>
+                    <p>Lightweight LV2 plugin host with professional audio processing capabilities.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="index.html">Main Site</a></li>
+                        <li><a href="linux.html">Linux Version</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/djshaji/violet" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/djshaji/violet/releases/latest" target="_blank">Download</a></li>
+                        <li><a href="Windows.md">Full Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>License</h4>
+                    <p>MIT License - Free and Open Source</p>
+                    <p class="license-note">Note: LV2 plugins have separate licenses</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amp Rack Project. Open Source Software.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

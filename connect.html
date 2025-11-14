@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amp Rack - Connection Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Version Counter Overlay -->
+    <div class="version-counter-overlay" id="versionCounter">
+        <div class="version-counter-content">
+            <div class="version-label">Version</div>
+            <div class="version-number" id="counterNumber">0</div>
+            <div class="version-sublabel">Amp Rack</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+                        <span class="logo-icon">🎸</span>
+                        <span class="logo-text">AMP RACK</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#screenshots">Screenshots</a></li>
+                    <li><a href="windows.html">Windows</a></li>
+                    <li><a href="linux.html">Linux</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                    <li><a href="index.html#download">Download</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="https://github.com/djshaji/alana" target="_blank">GitHub</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="container">
+            <h1><strong>Establishing the Mobile Rig: An Expert Guide to Low-Latency Guitar Connectivity for Amp Rack on Android</strong></h1>
+
+            <h2><strong>I. Introduction: The Amp Rack Ecosystem and the Latency Imperative</strong></h2>
+
+            <p>Amp Rack is distinguished as a comprehensive Guitar/Voice Audio Effects Processor for the Android platform, providing robust functionality that includes a tuner and an MP3/OPUS recorder.<sup>1</sup> Its architectural foundation as an Open Source LV2/LADSPA Plugins Host is central to its utility, granting users access to over 300 high-quality audio plugins. These plugins can be organized in any sequence within the audio effect chain, allowing for the creation of distinct, high-quality tones.<sup>1</sup> Furthermore, the application enhances practice routines through valuable integrated features such as a drum machine and a backing track player, which allows for recording chords for looping, and adjustment of both BPM and volume.<sup>1</sup></p>
+
+            <h3><strong>The Core Challenge: Signal Integrity and Real-Time Latency</strong></h3>
+
+            <p>For any mobile application designed to function as a real-time guitar amplifier and effects processor, performance hinges on overcoming audio latency. Latency is the audible delay between the musician initiating a sound (striking a string) and hearing the resulting, processed output. If this delay is too long (typically exceeding 30 milliseconds), the lag renders the experience unplayable.</p>
+
+            <p>While Amp Rack is marketed with claims of "High performance Low Latency Native Audio Processing" and suggests "No latency on even the most basic devices" <sup>2</sup>, the reality of Android audio architecture introduces external limitations. Addressing audio latency on Android is known to be challenging due to inherent hardware and operating system constraints.<sup>3</sup> The high-quality floating point precision audio processing utilized by the application <sup>1</sup> ensures that the app's internal code is optimized, often utilizing the system's lowest-level native audio APIs (such as AAudio or OpenSL ES). However, this high level of application optimization cannot entirely overcome bottlenecks related to the phone's built-in analog components or kernel processing speeds.</p>
+
+            <p>Therefore, achieving a truly professional, real-time performance hinges less on the application itself and more on the hardware pathway selected for connecting the guitar to the phone. The tutorial must emphasize solutions that completely bypass the phone's internal, latency-prone analog circuitry.</p>
+
+            <h2><strong>II. Core Technical Concepts for Mobile Guitarists</strong></h2>
+
+            <p>Before detailing the connection methods, it is imperative to establish the technical requirements for optimal signal quality. Failure to adhere to these standards results in compromised tone, regardless of the application’s processing power.</p>
+
+            <h3><strong>The Crucial Difference: Hi-Z vs. Lo-Z Input Impedance</strong></h3>
+
+            <p>Electric guitars are classified as high-impedance (Hi-Z) instruments, meaning they produce a high-voltage, low-current signal. This signal requires an input with a corresponding high impedance (measured in megaohms, or MΩ) to preserve the full frequency spectrum and dynamic range.</p>
+
+            <p>Consumer-grade 3.5mm inputs—found on most smartphones—are designed for low-impedance (Lo-Z) microphones, such as those integrated into standard headsets. Plugging a Hi-Z guitar signal directly into a Lo-Z input results in a significant impedance mismatch.<sup>4</sup> The audible consequence is a noticeable degradation of tone, characterized by a loss of clarity, high-end sparkle, and overall signal level (a phenomenon often described as sounding "muddy" or "thin"). To capture a guitar accurately, the chosen interface or cable must include a dedicated instrument or Hi-Z input.<sup>4</sup></p>
+
+            <h3><strong>The TRRS (Analog) vs. USB (Digital) Divide</strong></h3>
+
+            <p>The method chosen for signal transfer fundamentally determines both latency performance and signal fidelity. The two primary approaches involve either the phone's analog headphone jack (TRRS) or its digital data port (USB).</p>
+
+            <p>The analog method relies on adapters that feed the guitar signal directly into the phone's internal Analog-to-Digital Converter (ADC). This subjects the signal to the impedance mismatch issue and the performance limitations of the Android operating system, which handles the conversion process.<sup>6</sup></p>
+
+            <p>Conversely, the digital method utilizes an external USB Audio Interface. This interface performs the ADC conversion using dedicated, high-quality hardware outside of the phone. This immediately resolves the impedance mismatch problem (as dedicated interfaces feature Hi-Z inputs) and significantly reduces the processing load on the phone’s CPU, which is crucial for achieving low latency.<sup>6</sup></p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Methodology</th>
+                        <th>Required Hardware</th>
+                        <th>Signal Conversion</th>
+                        <th>Input Impedance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Analog (TRRS Adapter)</td>
+                        <td>Adapters/Splitters <sup>7</sup></td>
+                        <td>Phone's Internal ADC</td>
+                        <td>Lo-Z (Mismatch Risk)</td>
+                    </tr>
+                    <tr>
+                        <td>Digital (USB Interface)</td>
+                        <td>Interface + OTG <sup>7</sup></td>
+                        <td>Interface's Dedicated ADC</td>
+                        <td>Hi-Z (Required on interface)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3><strong>Understanding Android's Role in USB Connectivity</strong></h3>
+
+            <p>Utilizing a USB audio interface requires adherence to three fundamental rules to ensure compatibility and stability <sup>8</sup>:</p>
+
+            <ol>
+                <li><strong>USB Host Mode (OTG):</strong> The Android device must possess the hardware capability to act as a USB host (often referred to as On-The-Go, or OTG). This allows the phone to both control and provide power to the peripheral device.</li>
+                <li><strong>USB Audio Class Compliance:</strong> The audio interface must be 'USB audio class compliant.' This standard ensures that the device is driverless and can be recognized automatically by the Android operating system kernel, which is essentially Linux.<sup>7</sup> Amp Rack is designed to automatically detect and utilize external audio interfaces.<sup>7</sup></li>
+                <li><strong>Power Supply:</strong> The Android device must be able to supply sufficient power to the interface, or the interface must rely on an external power source (such as a wall adapter or a powered USB hub).<sup>8</sup> High-quality, bus-powered interfaces can often draw more current than a mobile device’s OTG port is engineered to supply, leading to instability or connectivity failure.</li>
+            </ol>
+
+            <p>The Android operating system places specific requirements on accepted audio formats for class-compliant devices. The audio format must be PCM (Pulse Code Modulation), with acceptable bit depths including 16-bits, 24-bits, or 32-bits (where 24 bits of useful audio data are left-justified within the 32-bit word). Crucially, the sample rate must align with standard supported rates, such as 48 kHz, 44.1 kHz, 32 kHz, 24 kHz, 22.05 kHz, 16 kHz, 12 kHz, 11.025 kHz, or 8 kHz.<sup>9</sup> Using a non-native sample rate forces the operating system to pass the audio buffers through a system resampler, which introduces additional latency. To minimize lag, selecting an interface and application setting that matches standard system rates (typically 44.1 kHz or 48 kHz) is highly recommended.</p>
+
+            <h2><strong>III. Connection Strategy A: The Budget Analog Setup (3.5mm TRRS)</strong></h2>
+
+            <p>This method, while simple and inexpensive, is inherently limited by performance and signal quality constraints. It is generally suitable only for highly casual practice or basic functional testing where latency and tone fidelity are secondary concerns.</p>
+
+            <h3><strong>Required Components List</strong></h3>
+
+            <p>The primary hardware required for this method focuses on adapting the guitar’s standard output to the phone’s mic input.<sup>7</sup></p>
+
+            <ol>
+                <li><strong>1/4" TRS to 3.5mm Adapter:</strong> Used to convert the 1/4" guitar cable end to a smaller 3.5mm plug. This component is typically inexpensive.<sup>7</sup></li>
+                <li><strong>Two-Way 3.5mm Splitter (TRRS):</strong> This is a critical component that separates the single four-pole (TRRS) phone jack into two distinct connections: a 3.5mm mic input and a 3.5mm headphone output.<sup>7</sup></li>
+            </ol>
+
+            <h3><strong>Step-by-Step Analog Connection Tutorial</strong></h3>
+
+            <ol>
+                <li><strong>Prepare the Input:</strong> Connect the 1/4" guitar cable to the 1/4" TRS to 3.5mm adapter.</li>
+                <li><strong>Connect to Splitter:</strong> Plug the 3.5mm adapter end into the dedicated <strong>Mic input</strong> port of the two-way TRRS splitter.</li>
+                <li><strong>Monitor Setup:</strong> Connect headphones, earbuds, or powered speakers to the dedicated <strong>Headphone output</strong> port of the TRRS splitter.<sup>7</sup></li>
+                <li><strong>Connect to Phone:</strong> Plug the single TRRS connector of the splitter into the Android phone’s 3.5mm jack.</li>
+                <li><strong>Configure Amp Rack:</strong> Open the Amp Rack application. The developer suggests restarting the app to automatically route audio through the splitter. If automatic detection fails, the user must manually set the input and output audio devices by navigating to <strong>Settings -> Audio Devices</strong> within the app.<sup>7</sup></li>
+            </ol>
+
+            <h3><strong>Inherent Limitations of the Analog Path</strong></h3>
+
+            <p>The use of jack connectors for connecting a guitar to a phone often results in high latency.<sup>6</sup> This occurs because the phone’s internal processing unit is responsible for handling the complex Analog-to-Digital Conversion. Furthermore, the impedance mismatch significantly compromises tone, as noted in Section II.A.</p>
+
+            <p>A lesser-known, yet highly irritating, limitation is the vulnerability to electrical noise. When a device relies on the analog path, it is highly susceptible to interference and ground hum generated by the phone’s internal components (e.g., screen, processor).<sup>10</sup> This often manifests as an annoying hum or buzz, which may necessitate the purchase of external solutions like ground loop isolators, thereby increasing the effective cost and complexity of the "budget" solution.<sup>11</sup></p>
+
+            <h2><strong>IV. Connection Strategy B: The Professional Digital Setup (USB Audio Interface)</strong></h2>
+
+            <p>For musicians seeking real-time performance, optimal tone capture, and the ability to utilize Amp Rack’s features (such as high-quality recording and complex plugin chains), the dedicated USB Audio Interface pathway is mandatory.</p>
+
+            <h3><strong>Why USB Interfaces are Essential for Low Latency and Quality</strong></h3>
+
+            <p>The primary function of the external USB audio interface is to perform the crucial Analog-to-Digital Conversion (ADC) processing outside the phone’s resource-limited environment. By handling the conversion and providing a clean, digital signal to the Android device, the interface significantly reduces the processing burden placed upon the phone’s CPU.<sup>6</sup> Furthermore, virtually all instrument-focused USB interfaces feature dedicated Hi-Z inputs, ensuring that the guitar’s signal is captured with accurate impedance matching, preserving the full spectrum of the instrument’s tone.<sup>4</sup></p>
+
+            <p>High-end interfaces often include <strong>direct monitoring</strong> capabilities.<sup>12</sup> This feature allows the input signal to be routed directly to the headphone output with zero software delay, enabling the user to monitor their playing instantly, even if the processed signal from Amp Rack experiences negligible lag.</p>
+
+            <h3><strong>The Android USB Compatibility Technical Deep Dive</strong></h3>
+
+            <p>Successful digital connectivity requires strict adherence to technical standards. As previously detailed, the interface must be <strong>USB audio class compliant</strong> (driverless) and the Android device must support <strong>USB Host Mode (OTG)</strong>.<sup>8</sup></p>
+
+            <h4><strong>USB Power Management: The Hidden Failure Point</strong></h4>
+
+            <p>While class compliance is often advertised, power consumption is a common reason for connectivity failure. If an interface requires more power than the phone’s OTG port can stably deliver, the interface may connect initially but fail to run at high sample rates, or it may randomly drop out during operation.<sup>8</sup></p>
+
+            <p>For high-performance, bus-powered desktop interfaces (such as the Focusrite Scarlett 2i2 mentioned in comparison discussions <sup>5</sup>), it is often necessary to employ an <strong>externally powered USB hub</strong>. This hub receives power from a wall adapter, provides stable power to the demanding interface, and then transfers only the data signal to the Android phone via the OTG cable.</p>
+
+            <h3><strong>Hardware Selection Criteria and Recommendations</strong></h3>
+
+            <p>When selecting a USB audio interface for Amp Rack, the following categories offer different benefits:</p>
+
+            <ol>
+                <li><strong>Mobile-First Interfaces:</strong> Devices like the IK Multimedia iRig HD X <sup>12</sup> or similar dedicated mobile units are optimized for low power draw and guaranteed class compliance with both iOS and Android platforms. They typically offer 24-bit conversion at standard rates (44.1/48/96 kHz) and a dedicated Hi-Z input.<sup>12</sup></li>
+                <li><strong>Prosumer Interfaces:</strong> Larger interfaces, such as the Solid State Logic SSL 2 MKII or Universal Audio Volt series <sup>13</sup>, offer superior preamps and conversion quality. When used with Android, these interfaces must be carefully researched to ensure they meet the power and class compliance requirements detailed in Section IV.B, often necessitating an externally powered hub.</li>
+            </ol>
+
+            <p>The following table summarizes the technical checklist for verifying potential USB interfaces:</p>
+
+            <h4>Android USB Audio Interface Compatibility Checklist</h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requirement Category</th>
+                        <th>Required Specification</th>
+                        <th>Source/Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Host Mode</strong></td>
+                        <td>Android Device supports USB Host Mode (OTG)</td>
+                        <td>Essential for external device control/power <sup>8</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interface Type</strong></td>
+                        <td>USB Audio Class Compliant (Driverless)</td>
+                        <td>Required for automatic OS recognition <sup>8</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Audio Format</strong></td>
+                        <td>PCM (Pulse Code Modulation)</td>
+                        <td>Required Android standard <sup>9</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bit Depth</strong></td>
+                        <td>16-bit, 24-bit, or 32-bit (24-bit useful data)</td>
+                        <td>Ensures data integrity <sup>9</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sample Rate</strong></td>
+                        <td>Standard Rates (e.g., 44.1, 48, 96 kHz)</td>
+                        <td>Prevents system resampling, reducing latency <sup>9</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Input Impedance</strong></td>
+                        <td>Dedicated Hi-Z Instrument Input</td>
+                        <td>Preserves guitar tone and level <sup>4</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Power Supply</strong></td>
+                        <td>Low power draw OR External/Powered source</td>
+                        <td>Ensures stable operation without power failure <sup>8</sup></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3><strong>Step-by-Step Digital Connection Tutorial</strong></h3>
+
+            <ol>
+                <li><strong>Prepare the Connection:</strong> Connect the USB Audio Interface to the Android phone using the appropriate USB OTG adapter cable (e.g., USB-A to USB-C or Micro USB). If using a high-power interface, connect the externally powered USB hub first, and then connect the hub to the phone.<sup>7</sup></li>
+                <li><strong>Connect Guitar:</strong> Plug the 1/4" guitar cable into the dedicated Hi-Z input jack on the Audio Interface.</li>
+                <li><strong>Monitoring Setup:</strong> Connect headphones to the interface’s dedicated headphone output. This is crucial for maintaining the lowest latency signal possible, especially if the interface supports hardware monitoring.<sup>7</sup></li>
+                <li><strong>Launch and Configure Amp Rack:</strong> Restart Amp Rack. The application is designed to automatically detect and utilize the external interface. If manual setup is needed, navigate to <strong>Settings -> Audio Devices</strong> and ensure the USB interface is explicitly selected for both input and output.<sup>7</sup></li>
+            </ol>
+
+            <h2><strong>V. Achieving Ultra-Low Latency and Advanced Optimization</strong></h2>
+
+            <p>Even with the optimal hardware pathway established via a USB interface, software and system configuration remain vital for pushing Android audio performance to its documented lowest limits (potentially sub-20ms round trip for devices supporting FEATURE_AUDIO_PRO).<sup>14</sup></p>
+
+            <h3><strong>OS-Level Hygiene and Performance Preparation</strong></h3>
+
+            <p>Prioritizing system resources is the first step toward optimization. This involves implementing basic system maintenance and preparation:</p>
+
+            <ol>
+                <li><strong>System Maintenance:</strong> Ensure the device’s operating system is fully updated, and periodically clear the phone's cache.<sup>3</sup></li>
+                <li><strong>Minimize Competing Processes:</strong> Avoid running multiple applications simultaneously.<sup>3</sup> This is especially important when using Amp Rack’s resource-intensive features, such as the drum machine, backing track player, and high-quality recording, all of which require dedicated CPU cycles.<sup>1</sup></li>
+                <li><strong>Disable Power Management:</strong> The CPU governor, which dynamically reduces CPU frequency to conserve battery life, is a known cause of audio drop-outs and glitches.<sup>15</sup> To ensure a consistent, low-latency performance window, it is strongly recommended that the user enable performance modes, put the phone in Airplane Mode, or disable system notifications to minimize the chance of unexpected CPU throttling or system interrupts.</li>
+            </ol>
+
+            <h3><strong>Developer Settings Deep Dive: Buffer Management</strong></h3>
+
+            <p>Latency performance is intrinsically linked to the audio buffer size—the small segment of memory used to hold audio data during processing. A lower buffer size means less delay, but it drastically increases the risk of instability, resulting in audio glitches or "underruns" if the CPU cannot process the data quickly enough.<sup>16</sup></p>
+
+            <p>For professional audio development on Android, the best practice is to process audio in native code (C++) via the JNI (Java Native Interface), bypassing the latency caused by the Dalvik Garbage Collector.<sup>14</sup> Amp Rack utilizes this approach.<sup>1</sup> For the application to perform optimally, the buffer size must be synchronized with the system's preferred output frames per buffer, defined by <code>AudioManager.getProperty(PROPERTY_OUTPUT_FRAMES_PER_BUFFER)</code>.<sup>14</sup> Using a buffer size that is not a multiple of the system's preferred size can result in the system occasionally forcing two processing calls per timeslice, leading to glitches.</p>
+
+            <p>While developer controls allowing manual buffer size adjustment (like those found in certain third-party utilities <sup>16</sup>) are rare on standard Android installs, the underlying optimization principle involves iterative tuning:</p>
+
+            <ol>
+                <li>Begin with a standard or higher buffer setting (prioritizing stability).</li>
+                <li>If performance allows, gradually reduce the buffer size (lowering latency) until audible glitches or dropouts begin.</li>
+                <li>Increase the buffer slightly above the failure point to establish the minimum stable latency setting for that specific device/interface combination.</li>
+            </ol>
+
+            <p>Modern native audio APIs (like AAudio) may incorporate internal dynamic buffer optimization, where the system continuously monitors for underruns (xRuns) and automatically increases the buffer size by one "burst" if glitches occur, aiming to maintain stability.<sup>17</sup> If the application uses this method, system interruptions (like notifications or background processes) could trigger temporary latency increases. Therefore, dedicated performance mode remains the critical user action to ensure consistent, fixed, low latency.</p>
+
+            <h2><strong>VI. Troubleshooting and System Maintenance</strong></h2>
+
+            <p>The implementation of a reliable mobile guitar rig often requires targeted troubleshooting of two common issues: connectivity failure and electrical noise.</p>
+
+            <h3><strong>Diagnosing and Eliminating Electrical Noise (Hum and Buzz)</strong></h3>
+
+            <p>Electrical noise, often manifesting as a high-pitched whine or a low-frequency hum (ground buzz), is a prevalent issue in mobile and digital audio setups.<sup>10</sup> This noise frequently arises from ground loops—unwanted electrical currents flowing through multiple grounding paths—which are common when the phone is charging while connected to an external audio device.<sup>11</sup></p>
+
+            <p><strong>Solutions for Noise Mitigation:</strong></p>
+            <ul>
+                <li><strong>Analog Path Noise (TRRS):</strong> If using the TRRS method (Strategy A), noise from the phone or charging cable can be effectively removed using a simple 3.5mm unbalanced stereo isolator.<sup>11</sup></li>
+                <li><strong>USB Whine:</strong> If the noise is caused by USB data transmission or power interference (a common "USB whine"), a dedicated USB audio isolator (such as the Topping HS02 or similar) can break the electrical connection while preserving the data transfer, provided the device does not require external power.<sup>11</sup></li>
+                <li><strong>Professional Signal Conditioning:</strong> For permanent, high-fidelity setups, a passive Direct Injection (DI) box (for powered sources) or an active DI box (for guitars with passive magnetic pickups) can be used to balance the signal and eliminate ground loop issues, although this adds hardware complexity.<sup>11</sup></li>
+            </ul>
+
+            <h3><strong>Resolving Connectivity and Input Errors</strong></h3>
+
+            <p>If the setup fails to produce sound, troubleshooting should follow a systematic procedure:</p>
+
+            <ol>
+                <li><strong>Interface Recognition:</strong> If a USB interface is not recognized, first verify the phone’s OTG functionality (e.g., test with a USB mouse). Confirm the interface is class compliant and ensure sufficient power is supplied via a powered hub if required.<sup>8</sup></li>
+                <li><strong>Amp Rack Routing:</strong> A common user error is a bypassed or unengaged signal path. One user noted that the entire effects chain was unintuitively off by default.<sup>1</sup> The user must verify that the desired plugins are enabled and that the input and output devices are correctly mapped to the USB interface in Amp Rack's <strong>Settings -> Audio Devices</strong>.<sup>7</sup></li>
+                <li><strong>Gain Staging:</strong> Check the physical input gain controls on the audio interface.<sup>12</sup> If the gain is too low, the sound will be quiet; if too high, it may clip and distort the input before it reaches Amp Rack.</li>
+            </ol>
+
+            <p>The following table provides a quick reference for diagnosing and resolving common performance and noise issues:</p>
+
+            <h4>Latency and Noise Troubleshooting Guide</h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symptom</th>
+                        <th>Root Cause Analysis</th>
+                        <th>Actionable Solution</th>
+                        <th>Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Audio Lag (High Latency)</td>
+                        <td>Hardware limitation/Poor Input Path</td>
+                        <td>Switch from TRRS to USB Audio Interface.</td>
+                        <td><sup>3</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Audio Lag (Glitching/Dropouts)</td>
+                        <td>CPU/System Buffer Mismatch</td>
+                        <td>Clear cache; Close all background apps; Tune buffer size if system allows.</td>
+                        <td><sup>3</sup></td>
+                    </tr>
+                    <tr>
+                        <td>High-Pitched Hum/Buzz</td>
+                        <td>Ground Loop / Electrical Interference</td>
+                        <td>Use 3.5mm unbalanced isolator (TRRS); Use powered USB hub; Use DI box.</td>
+                        <td><sup>10</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Interface Not Recognized</td>
+                        <td>Power starvation or OTG failure</td>
+                        <td>Use externally powered interface or powered USB hub. Check OTG functionality.</td>
+                        <td><sup>8</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Low Signal/Thin Tone</td>
+                        <td>Impedance Mismatch (Analog use)</td>
+                        <td>Use USB interface with dedicated Hi-Z input.</td>
+                        <td><sup>4</sup></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3><strong>Maintenance and Recording Workflow</strong></h3>
+
+            <p>Amp Rack includes integrated tools designed to streamline the practicing and recording workflow. Users should leverage the built-in tuner and the Drum Machine, which offers various tracks with adjustable BPM.<sup>1</sup> The Backing Track player allows users to record simple chord progressions and loop them, facilitating focused scale practice.<sup>1</sup></p>
+
+            <p>For capturing performances, Amp Rack supports recording tracks in high-quality MP3 or OPUS formats, which facilitates easy sharing.<sup>1</sup> Users are encouraged to save custom tonal configurations, utilizing the vast array of LADSPA/LV2 plugins, and manage these sounds using the improved Presets Loading and Quick Patch features.<sup>2</sup></p>
+
+            <h2><strong>VII. Conclusions and Recommendations</strong></h2>
+
+            <p>Achieving professional-grade, low-latency guitar processing with Amp Rack on Android necessitates a clear understanding of mobile digital audio limitations and a commitment to high-quality hardware.</p>
+
+            <p>The expert conclusion is that the Analog (TRRS) connection method should be considered a last resort, suitable only for the most basic, non-critical usage due to the unavoidable penalties of impedance mismatch, high latency, and vulnerability to noise.</p>
+
+            <p>For any serious musician utilizing Amp Rack’s extensive features, the <strong>USB Audio Interface</strong> approach is the only viable pathway. This digital strategy ensures that the guitar signal benefits from a dedicated Hi-Z input and the processing is offloaded to the interface’s high-quality ADC, maximizing the effectiveness of Amp Rack’s low-latency native code.</p>
+
+            <p>Successful implementation requires careful adherence to the technical prerequisites: verifying USB Audio Class Compliance and, critically, ensuring sufficient power delivery via OTG or an externally powered USB hub. By combining this robust hardware foundation with vigilant software hygiene—closing background applications and minimizing system interrupts—users can push the Android platform to deliver performance capable of supporting real-time tonal sculpting and high-quality recording.</p>
+
+            <h4><strong>Works cited</strong></h4>
+
+            <ol>
+                <li>Amp Rack Guitar Effects Pedal - Apps on Google Play, accessed November 14, 2025, <a href="https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack">https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack</a></li>
+                <li>Amp Rack, accessed November 14, 2025, <a href="https://amprack.in/">https://amprack.in/</a></li>
+                <li>How to Reduce Latency in the Tonebridge Android App: A Comprehensive Guide, accessed November 14, 2025, <a href="https://help.ultimate-guitar.com/en/articles/6740541-how-to-reduce-latency-in-the-tonebridge-android-app-a-comprehensive-guide">https://help.ultimate-guitar.com/en/articles/6740541-how-to-reduce-latency-in-the-tonebridge-android-app-a-comprehensive-guide</a></li>
+                <li>Guitar-usb interface vs External sound card (very low budget) - Music Stack Exchange, accessed November 14, 2025, <a href="https://music.stackexchange.com/questions/41282/guitar-usb-interface-vs-external-sound-card-very-low-budget">https://music.stackexchange.com/questions/41282/guitar-usb-interface-vs-external-sound-card-very-low-budget</a></li>
+                <li>Is there any benefit to an audio interface versus a USB guitar cable? : r/NeuralDSP - Reddit, accessed November 14, 2025, <a href="https://www.reddit.com/r/NeuralDSP/comments/1h1m9z3/is_there_any_benefit_to_an_audio_interface_versus/">https://www.reddit.com/r/NeuralDSP/comments/1h1m9z3/is_there_any_benefit_to_an_audio_interface_versus/</a></li>
+                <li>[Solved] The Sound of My Guitar is Heard Delayed Using My Phone, accessed November 14, 2025, <a href="https://blog.deplike.com/solved-the-sound-of-my-guitar-is-heard-delayed-using-my-phone/">https://blog.deplike.com/solved-the-sound-of-my-guitar-is-heard-delayed-using-my-phone/</a></li>
+                <li>Connect Guitar to Phone - Amp Rack, accessed November 14, 2025, <a href="https://amprack.in/connect.php">https://amprack.in/connect.php</a></li>
+                <li>Connecting a USB Audio Device - Audio Evolution, accessed November 14, 2025, <a href="https://www.audio-evolution.com/manual/android/html/ConnectingaUSBAudioDevice.html">https://www.audio-evolution.com/manual/android/html/ConnectingaUSBAudioDevice.html</a></li>
+                <li>USB digital audio | Android Open Source Project, accessed November 14, 2025, <a href="https://source.android.com/docs/core/audio/usb">https://source.android.com/docs/core/audio/usb</a></li>
+                <li>How to fix Ground Noise | Guitar Tech Tips | Ep. 8 | Thomann - YouTube, accessed November 14, 2025, <a href="https://www.youtube.com/watch?v=-dnQtN3Yzso">https://www.youtube.com/watch?v=-dnQtN3Yzso</a></li>
+                <li>12 better, simple and cheap ways to fix noise, hum, buzz, ground loops and USB whine, accessed November 14, 2025, <a href="https://www.youtube.com/watch?v=3asGhHUVO0o">https://www.youtube.com/watch?v=3asGhHUVO0o</a></li>
+                <li>Compare - iRig USB - Your guitar journey starts here, accessed November 14, 2025, <a href="https://www.ikmultimedia.com/products/irigusb/index.php?p=compare">https://www.ikmultimedia.com/products/irigusb/index.php?p=compare</a></li>
+                <li>Best Audio Interface For Guitar 2025 | Top 5 Picks From Budget to Pro! - YouTube, accessed November 14, 2025, <a href="https://www.youtube.com/watch?v=pSKzargQais">https://www.youtube.com/watch?v=pSKzargQais</a></li>
+                <li>Low-latency audio playback on Android - Stack Overflow, accessed November 14, 2025, <a href="https://stackoverflow.com/questions/14842803/low-latency-audio-playback-on-android">https://stackoverflow.com/questions/14842803/low-latency-audio-playback-on-android</a></li>
+                <li>What Developers Can and Cannot Do to Lower Android Audio Latency for Android's 10ms Problem - Superpowered, accessed November 14, 2025, <a href="https://superpowered.com/android-audio-low-latency-primer">https://superpowered.com/android-audio-low-latency-primer</a></li>
+                <li>Settings - Wavelet, accessed November 14, 2025, <a href="https://pittvandewitt.github.io/Wavelet/Settings/">https://pittvandewitt.github.io/Wavelet/Settings/</a></li>
+                <li>AAudio | Android NDK - Android Developers, accessed November 14, 2025, <a href="https://developer.android.com/ndk/guides/audio/aaudio/aaudio">https://developer.android.com/ndk/guides/audio/aaudio/aaudio</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Amp Rack</h4>
+                    <p>Professional guitar & audio effects processor for Android and Desktop platforms.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/djshaji/alana" target="_blank" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#screenshots">Screenshots</a></li>
+                        <li><a href="windows.html">Windows</a></li>
+                        <li><a href="linux.html">Linux</a></li>
+                        <li><a href="index.html#download">Download</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/djshaji/alana" target="_blank">GitHub</a></li>
+                        <li><a href="https://amprack.acoustixaudio.org" target="_blank">Official Website</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack" target="_blank">Android (Play Store)</a></li>
+                        <li><a href="https://github.com/djshaji/alana/releases/latest" target="_blank">Windows/Linux/RPi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amp Rack. Open Source Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

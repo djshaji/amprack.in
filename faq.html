@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amp Rack - FAQ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Version Counter Overlay -->
+    <div class="version-counter-overlay" id="versionCounter">
+        <div class="version-counter-content">
+            <div class="version-label">Version</div>
+            <div class="version-number" id="counterNumber">0</div>
+            <div class="version-sublabel">Amp Rack</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; display: flex; align-items: center;">
+                        <span class="logo-icon">🎸</span>
+                        <span class="logo-text">AMP RACK</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#screenshots">Screenshots</a></li>
+                    <li><a href="windows.html">Windows</a></li>
+                    <li><a href="linux.html">Linux</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                    <li><a href="index.html#download">Download</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="https://github.com/djshaji/alana" target="_blank">GitHub</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="faq" class="faq page-content">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        What is Amp Rack?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Amp Rack is a Guitar Effects Processor for Android. You can use it to put some effects on your Guitar, voice, or any other instrument.</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        But what is Amp Rack really?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Amp Rack is a LADSPA Plugin Host for Android. It supports LADSPA SDK v1.1 plugins. Since ANdroid does not (easily) support loading dynamic modules, a lot (!) of plugins (shared files) have been included in the APK.</p>
+                        <p>Amp Rack takes in audio input, runs it through loaded plugins, and sends output to an audio device, optionally recording it to an audio file.</p>
+                        <p>We use the <a href="https://github.com/google/oboe" target="_blank">Oboe</a> framework by Google, and Amp Rack achieves Low Latency due to native code and high performance tuning.</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I connect my guitar to my phone?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p><a href="connect.html" target="_blank">This is how</a></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I put effects on my guitar?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Click this button to start the effects engine.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179359462-cd945362-1def-4b1f-bcd2-100620211fd1.jpg" alt="record"></p>
+                        <p>Click the + Effect button to show the effect plugins dialog</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179359605-17855b7b-74fe-44b0-9ef9-63074bbad009.jpg" alt="add"></p>
+                        <p>By default the list shows all available effects. You can add some plugins to your favorites, and toggle the show favourites button to show only <em>liked</em> effects</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179359861-73bf2d04-c8d2-44eb-b673-a64b9b3d4ba1.jpg" alt="show favs"></p>
+                        <p>You can filter the plugins list to show only one type, such as Distortion, Echo, Reverb, Delay, Chorus etc. A number of plugin types are available.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179393179-1861286b-903d-4798-b013-e33b78a68df7.jpg" alt="plugin_types"></p>
+                        <p>Click the + button to add plugin to the effects chain, or ♡ button to add plugin to favourites</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179393269-17666404-b49a-4197-b3f4-fc8fe6a8be1c.jpg" alt="add1"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I change effect parameters?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Move the sliders to change effect parameters. Labels above parameters indicate name of the parameter.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179393355-a9be9111-a756-489d-9519-b8ff973e7807.jpg" alt="params"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        Does changing the sequence of plugins change the sound?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Putting a compress before and after a distortion effect has completely different connotations. Try for yourself and find out!</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I record audio?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Click on the record button to enable recording before you turn on the effect engine.</p>
+                        <p>💡 You cannot turn recording on or off while the effect engine is running.</p>
+                        <p>💡 You can record a backing track with chords or rhythm which can be played on loop.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179393528-8ca73cf4-a0b5-4218-b312-12f857913e27.jpg" alt="rec"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I change the audio recording format?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Go to Settings ↔️ Export Settings ↔️ Audio Export Format</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        What are presets?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Presets are plugin settings which you can save for use later. When you save a preset, the entire effect engine configuration is saved.</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I use Presets?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tap the Preset button on the navigation bar to switch to the Preset Tab.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179393883-dbc4cd63-ba72-44e5-a108-8fbb7f1eff55.jpg" alt="preset"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I save a preset?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tap the + Preset button to open the Add Preset Dialog</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179394029-db829289-2e2b-4dd0-8e82-2080e7a0c483.jpg" alt="add_preset"></p>
+                        <p>The following is saved with a preset:</p>
+                        <ol>
+                            <li>Plugin Parameter Configuration</li>
+                            <li>Plugin Sequence</li>
+                        </ol>
+                        <p>💡 You can share a preset publicly by enabling the public option while saving a preset.</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        What is the Preset Library?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Preset Library contains Presets created by users and the Amp Rack team. You can sort the presets by date or popular rating. Use presets from the library to quickly find great sounds for your guitar.</p>
+                        <p>💡 <em>Like</em> your favourite presets to quickly find them later and to increase their rating.</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I use the Preset Library?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>On the Presets screen, tap the Library tab header to switch to the Library tab.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179394200-33b13fa6-9288-4bfb-bc95-8cd1049d5736.jpg" alt="lib"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I load a preset from my saved presets or the preset library?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tap the Big Play Button ⏯️ to load a preset</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179394301-5f6e623b-45d1-434c-9155-afece9c6bc9d.jpg" alt="load_p"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        Where are my recorded tracks?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tap the recordings icon on the navigation bar to switch to the recordings tab.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179394384-b12473ae-9571-4313-9409-6aac82aa4801.jpg" alt="rec_t"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I play a recorded track?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tap a file from the list to play it.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179394420-d0fb986d-5475-4c8b-bb9b-199b6942c1d4.jpg" alt="play"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I share a recorded track?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Long press a file to share it.</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I play a file as a backing track?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Play a recorded file and turn on the loop option.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179395833-85421b37-02ca-408f-9abc-cfabbcca794d.jpg" alt="loop"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I use the Drum Machine?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tap the Drum Machine icon on the navigation bar to switch to the drum machine tab.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179395899-48b8185e-4c43-40a3-a7da-02370e21ab56.jpg" alt="drums"></p>
+                        <p>As with the recordings tab, click on any drum track to play it, and turn on looping to play it on a loop.</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I modify app Settings?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>From the overflow menu, click on Settings.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179396279-c639b08d-ad5a-425e-a027-0d09fc4dab61.jpg" alt="settings"></p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I change the theme?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Go to Settings ➡️ Theme ➡️ Background</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I set a custom wallpaper?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Go to Settings ➡️ Theme ➡️ Use a Custom Background</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        How do I change input and output audio devices?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Go to Settings ➡️ Audio Devices ➡️ Input / Output Device</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        I plugged in a guitar and headphones, but the audio is playing from my phone mic to the phone speaker.
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>When you insert or remove an audio device, close the app completely, and open it again to make the audio system pick up the new device automatically for playing / recording audio.</p>
+                        <p>💡 You can always set an input / output device manually by going to Settings ➡️ Theme ➡️ Background</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        I plugged in a USB Audio device / interface, but audio is playing from the phone speaker.
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>When you insert or remove an audio device, close the app completely, and open it again to make the audio system pick up the new device automatically for playing / recording audio.</p>
+                        <p>💡 You can always set an input / output device manually by going to Settings ➡️ Theme ➡️ Background</p>
+                    </div>
+                </div>
+                <div class="faq-item-expandable">
+                    <button class="faq-question">
+                        🥚 How do I open the <em>hidden</em> command prompt?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The app has a built in command prompt which I use for debugging. Long press the app logo on the top left of the main screen to open the command prompt dialog. The dialog has autocomplete and will list all available commands. You can use it as a short cut to quickly open some dialog or change a setting.</p>
+                        <p><img src="https://user-images.githubusercontent.com/17184025/179396423-3a57514c-ea89-4f6e-93f0-bb6bb0f17aa6.jpg" alt="logo"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Amp Rack</h4>
+                    <p>Professional guitar & audio effects processor for Android and Desktop platforms.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/djshaji/alana" target="_blank" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#screenshots">Screenshots</a></li>
+                        <li><a href="windows.html">Windows</a></li>
+                        <li><a href="linux.html">Linux</a></li>
+                        <li><a href="index.html#download">Download</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/djshaji/alana" target="_blank">GitHub</a></li>
+                        <li><a href="https://amprack.acoustixaudio.org" target="_blank">Official Website</a></li>
+                        <li><a href="connect.html">Connection Guide</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Download</h4>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack" target="_blank">Android (Play Store)</a></li>
+                        <li><a href="https://github.com/djshaji/alana/releases/latest" target="_blank">Windows/Linux/RPi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amp Rack. Open Source Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

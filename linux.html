@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ariel - Cross-platform LV2 Plugin Host for Linux. Built with GTK4 and lilv for professional audio processing.">
+    <title>Ariel - Linux LV2 Plugin Host | Amp Rack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
+                        <span class="logo-icon">🎸</span>
+                        <span class="logo-text">AMP RACK</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="windows.html">Windows</a></li>
+                    <li><a href="linux.html" class="active">Linux</a></li>
+                    <li><a href="index.html#download">Download</a></li>
+                    <li><a href="https://github.com/djshaji/ariel" target="_blank">GitHub</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero platform-hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="platform-badge linux">Linux</div>
+                    <h1 class="hero-title">
+                        Ariel
+                        <span class="gradient-text">LV2 Plugin Host</span>
+                    </h1>
+                    <p class="hero-subtitle">Cross-platform LV2 host built with GTK4 and lilv. Professional audio processing for Linux, Windows, and macOS.</p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/djshaji/ariel/releases/latest" class="btn btn-primary" target="_blank">
+                            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                            </svg>
+                            Download for Linux
+                        </a>
+                        <a href="#features" class="btn btn-secondary">View Features</a>
+                    </div>
+                    <div class="version-info">
+                        <span class="platform-badges">
+                            <span class="mini-badge">Ubuntu</span>
+                            <span class="mini-badge">Fedora</span>
+                            <span class="mini-badge">Arch</span>
+                            <span class="mini-badge">Debian</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <img src="https://github.com/user-attachments/assets/94344f50-c4b2-493b-9c4b-7956125147de" alt="Ariel Linux Screenshot">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Linux Features</h2>
+                <p class="section-subtitle">Professional audio processing with GTK4</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎛️</div>
+                    <h3>865+ LV2 Plugins</h3>
+                    <p>Real-time LV2 plugin hosting with lilv integration. Discover hundreds of professional audio plugins.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Intelligent Search</h3>
+                    <p>Quickly find plugins by name, author, or URI. Filter by 40+ categories including Distortion, Reverb, Analyzer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>20+ Professional Themes</h3>
+                    <p>Dracula, Nord, Gruvbox, One Dark, Solarized, and more. Built-in dark themes with custom CSS support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Drag & Drop</h3>
+                    <p>Intuitive plugin loading with drag-and-drop support. Real-time parameter adjustment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>File Parameter Support</h3>
+                    <p>Load audio files, neural models (.nam, .nammodel), and impulse responses (.wav, .ir) directly into plugins.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Preset Management</h3>
+                    <p>Save and load individual plugin presets or entire chains with all parameters preserved.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Plugin Bypass</h3>
+                    <p>A/B testing with bypass functionality. Reorder plugins in chain for different sounds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>JACK Audio</h3>
+                    <p>Transport controls with auto-start engine. Full JACK Audio Connection Kit integration.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Cross-Platform</h3>
+                    <p>Runs on Linux, Windows, and macOS with modern GTK4 interface and responsive design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="installation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Installation</h2>
+                <p class="section-subtitle">Choose your distribution</p>
+            </div>
+            
+            <div class="distro-tabs">
+                <button class="distro-tab active" data-distro="ubuntu">Ubuntu / Debian</button>
+                <button class="distro-tab" data-distro="fedora">Fedora / RHEL</button>
+                <button class="distro-tab" data-distro="arch">Arch Linux</button>
+            </div>
+
+            <div class="distro-content">
+                <div class="distro-panel active" id="ubuntu">
+                    <h3>Ubuntu / Debian Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Install dependencies
+sudo apt update
+sudo apt install libgtk-4-dev liblilv-dev libjack-jackd2-dev meson build-essential
+
+# Clone the repository
+git clone https://github.com/djshaji/ariel.git
+cd ariel
+
+# Configure build
+meson setup builddir
+
+# Compile
+meson compile -C builddir
+
+# Run
+./builddir/ariel</code></pre>
+                    </div>
+                </div>
+
+                <div class="distro-panel" id="fedora">
+                    <h3>Fedora / RHEL / CentOS Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Install dependencies
+sudo dnf install gtk4-devel lilv-devel jack-audio-connection-kit-devel meson gcc
+
+# Clone and build
+git clone https://github.com/djshaji/ariel.git
+cd ariel
+meson setup builddir
+meson compile -C builddir
+
+# Run
+./builddir/ariel</code></pre>
+                    </div>
+                </div>
+
+                <div class="distro-panel" id="arch">
+                    <h3>Arch Linux Installation</h3>
+                    <div class="code-block">
+                        <pre><code># Install dependencies
+sudo pacman -S gtk4 lilv jack2 meson gcc
+
+# Clone and build
+git clone https://github.com/djshaji/ariel.git
+cd ariel
+meson setup builddir
+meson compile -C builddir
+
+# Run
+./builddir/ariel</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prerequisites-section">
+                <h3>Prerequisites</h3>
+                <div class="prereq-grid">
+                    <div class="prereq-item">
+                        <strong>GTK4</strong>
+                        <p>≥ 4.0 - Modern UI toolkit</p>
+                    </div>
+                    <div class="prereq-item">
+                        <strong>lilv</strong>
+                        <p>LV2 plugin host library</p>
+                    </div>
+                    <div class="prereq-item">
+                        <strong>JACK Audio</strong>
+                        <p>Real-time audio server</p>
+                    </div>
+                    <div class="prereq-item">
+                        <strong>Meson</strong>
+                        <p>Build system</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Showcase -->
+    <section class="theme-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Theme Collection</h2>
+                <p class="section-subtitle">20+ built-in themes for your workflow</p>
+            </div>
+            <div class="theme-grid">
+                <div class="theme-card">
+                    <div class="theme-preview dracula"></div>
+                    <h4>Dracula</h4>
+                    <p>Purple-tinted dark theme</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-preview nord"></div>
+                    <h4>Nord</h4>
+                    <p>Arctic-inspired blue</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-preview gruvbox"></div>
+                    <h4>Gruvbox</h4>
+                    <p>Retro groove colors</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-preview onedark"></div>
+                    <h4>One Dark</h4>
+                    <p>Atom editor theme</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-preview solarized"></div>
+                    <h4>Solarized Dark</h4>
+                    <p>Scientific palette</p>
+                </div>
+                <div class="theme-card">
+                    <div class="theme-preview material"></div>
+                    <h4>Material Darker</h4>
+                    <p>Google Material Design</p>
+                </div>
+            </div>
+            <p class="theme-note">All themes support custom CSS via <code>~/.config/ariel/style.css</code></p>
+        </div>
+    </section>
+
+    <!-- Usage Guide -->
+    <section class="usage-guide">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Getting Started</h2>
+            </div>
+            <div class="usage-grid">
+                <div class="usage-item">
+                    <div class="usage-number">1</div>
+                    <h3>Launch Ariel</h3>
+                    <div class="code-block-small">
+                        <code>./builddir/ariel</code>
+                    </div>
+                    <p>Audio engine starts automatically. Ensure JACK is running for audio processing.</p>
+                </div>
+                <div class="usage-item">
+                    <div class="usage-number">2</div>
+                    <h3>Plugin Discovery</h3>
+                    <p>Browse 865+ LV2 plugins in the left panel. Use search box to find by name, author, or URI. Filter by category dropdown.</p>
+                </div>
+                <div class="usage-item">
+                    <div class="usage-number">3</div>
+                    <h3>Loading Plugins</h3>
+                    <p>Drag plugins to active area or double-click. Control knobs and sliders appear automatically.</p>
+                </div>
+                <div class="usage-item">
+                    <div class="usage-number">4</div>
+                    <h3>File Parameters</h3>
+                    <p>Click "Choose File..." for plugins supporting audio files, neural models (.nam, .nammodel), or impulse responses.</p>
+                </div>
+                <div class="usage-item">
+                    <div class="usage-number">5</div>
+                    <h3>Theme Selection</h3>
+                    <p>Access Settings dialog from header menu. Choose from 20+ professional themes including Dracula, Nord, and Gruvbox.</p>
+                </div>
+                <div class="usage-item">
+                    <div class="usage-number">6</div>
+                    <h3>Preset Management</h3>
+                    <p>Save/load individual plugin presets or entire chains. Presets stored in <code>~/.config/ariel/presets/</code></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JACK Setup -->
+    <section class="jack-setup">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Audio Setup</h2>
+            </div>
+            <div class="jack-content">
+                <div class="jack-section">
+                    <h3>Start JACK Audio</h3>
+                    <div class="code-block">
+                        <pre><code># Check if JACK is running
+jack_control status
+
+# Start JACK with default settings
+jack_control start
+
+# Or use QJackCtl for graphical control
+qjackctl</code></pre>
+                    </div>
+                </div>
+                <div class="jack-section">
+                    <h3>PipeWire Users</h3>
+                    <div class="code-block">
+                        <pre><code># Check if PipeWire-JACK is active
+systemctl --user is-active pipewire-jack</code></pre>
+                    </div>
+                    <p>PipeWire provides JACK compatibility on modern Linux distributions.</p>
+                </div>
+                <div class="jack-section">
+                    <h3>JACK Connections</h3>
+                    <div class="code-block">
+                        <pre><code># Connect system input to Ariel
+jack_connect system:capture_1 ariel:input_left
+jack_connect system:capture_2 ariel:input_right
+
+# Connect Ariel output to system
+jack_connect ariel:output_left system:playback_1
+jack_connect ariel:output_right system:playback_2</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Plugins -->
+    <section class="supported-plugins">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Supported Plugin Types</h2>
+            </div>
+            <div class="plugin-types-grid">
+                <div class="plugin-type">
+                    <h4>🎸 Audio Effects</h4>
+                    <p>Reverb, delay, distortion, EQ, compressors</p>
+                </div>
+                <div class="plugin-type">
+                    <h4>🤖 Neural Amp Modelers</h4>
+                    <p>.nam/.nammodel file support</p>
+                </div>
+                <div class="plugin-type">
+                    <h4>📊 Analyzers</h4>
+                    <p>Spectrum analyzers, meters, tuners</p>
+                </div>
+                <div class="plugin-type">
+                    <h4>🎹 Generators</h4>
+                    <p>Synthesizers, oscillators, noise generators</p>
+                </div>
+                <div class="plugin-type">
+                    <h4>🎚️ IR Processors</h4>
+                    <p>.wav/.ir impulse response loading</p>
+                </div>
+                <div class="plugin-type">
+                    <h4>🎼 MIDI Effects</h4>
+                    <p>Note processors (MIDI support coming soon)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Ariel for Linux</h4>
+                    <p>Cross-platform LV2 plugin host built with GTK4 and professional audio processing.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="index.html">Main Site</a></li>
+                        <li><a href="windows.html">Windows Version</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/djshaji/ariel" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://github.com/djshaji/ariel/releases/latest" target="_blank">Download</a></li>
+                        <li><a href="Linux.md">Full Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/djshaji/ariel/issues" target="_blank">Report Issues</a></li>
+                        <li><a href="https://github.com/djshaji/ariel/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amp Rack Project. MIT License - Open Source Software.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="platform.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amp Rack - Professional Guitar & Audio Effects Processor for Android. LV2 Plugin Host with 200+ high quality audio effects.">
+    <title>Amp Rack - Guitar Effects Processor for Android</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Version Counter Overlay -->
+    <div class="version-counter-overlay" id="versionCounter">
+        <div class="version-counter-content">
+            <div class="version-label">Version</div>
+            <div class="version-number" id="counterNumber">0</div>
+            <div class="version-sublabel">Amp Rack</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">🎸</span>
+                    <span class="logo-text">AMP RACK</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="windows.html">Windows</a></li>
+                    <li><a href="linux.html">Linux</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="https://github.com/djshaji/alana" target="_blank">GitHub</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Transform Your Sound
+                        <span class="gradient-text">Anywhere</span>
+                    </h1>
+                    <p class="hero-subtitle">Professional guitar & audio effects processor for Android. 200+ high quality plugins. Low latency. Unlimited possibilities.</p>
+                    <div class="hero-buttons">
+                        <a href="https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack" class="btn btn-primary" target="_blank">
+                            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                            </svg>
+                            Get on Play Store
+                        </a>
+                        <a href="#features" class="btn btn-secondary">Learn More</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Audio Plugins</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Low</div>
+                            <div class="stat-label">Latency</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Open Source</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <img src="https://github.com/user-attachments/assets/b3af4ca9-4090-4cf1-8f2d-4bd7b430c471" alt="Amp Rack App Screenshot">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Multi-Platform Banner -->
+    <section class="platform-banner">
+        <div class="container">
+            <h3>🎉 Your Lucky Number is 6!</h3>
+            <p>Amp Rack 6 is now available for <strong>Windows</strong>, <strong>Linux</strong>, and <strong>Raspberry Pi</strong></p>
+            <div class="hero-buttons" style="justify-content: center; margin-top: 1rem;">
+                <a href="windows.html" class="btn btn-outline">Windows (Violet)</a>
+                <a href="linux.html" class="btn btn-outline">Linux (Ariel)</a>
+                <a href="https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack" class="btn btn-outline" target="_blank">Android (Amp Rack 6)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need to create professional guitar tones</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎛️</div>
+                    <h3>200+ Audio Plugins</h3>
+                    <p>Distortion, reverb, delay, compressors, cabinet emulations, and much more. All professional quality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Low Latency Engine</h3>
+                    <p>High performance native audio processing powered by Google's Oboe framework. No lag, even on basic devices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Customizable Interface</h3>
+                    <p>Fully skinnable UI with themes. Set custom wallpapers and make it yours.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Save & Share Presets</h3>
+                    <p>Create and save unlimited presets. Share your best tones with the community.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Easy Connectivity</h3>
+                    <p>Works with mic, 3.5mm jack, or USB interfaces. No expensive accessories needed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Recording & Backing Tracks</h3>
+                    <p>Record to WAV, MP3, or Opus. Create backing tracks and loop them for practice.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥁</div>
+                    <h3>Built-in Drum Machine</h3>
+                    <p>Practice with professional drum tracks. Adjustable BPM and looping support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Neural Amp Modeling</h3>
+                    <p>NAM and AIDA-X plugin support. IR cabinet loader for realistic amp tones.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Preset Library</h3>
+                    <p>Access presets created by professionals. Rate and favorite your go-to sounds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="tech-content">
+                <div class="tech-text">
+                    <h2>Built on Professional Technology</h2>
+                    <ul class="tech-list">
+                        <li>
+                            <strong>LV2 Plugin Host</strong>
+                            <p>Full support for LV2 SDK v1.1 plugins with native Android integration</p>
+                        </li>
+                        <li>
+                            <strong>Google Oboe Framework</strong>
+                            <p>Industry-leading low latency audio framework for Android</p>
+                        </li>
+                        <li>
+                            <strong>Native C++ Processing</strong>
+                            <p>High performance floating point precision audio processing</p>
+                        </li>
+                        <li>
+                            <strong>Open Source</strong>
+                            <p>Completely transparent codebase available on GitHub</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tech-visual">
+                    <div class="audio-wave">
+                        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                            <path class="wave-path" d="M0,50 Q10,30 20,50 T40,50 T60,50 T80,50 T100,50 T120,50 T140,50 T160,50 T180,50 T200,50" fill="none" stroke="url(#gradient)" stroke-width="3"/>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">See It In Action</h2>
+                <p class="section-subtitle">Beautiful interface, powerful features</p>
+            </div>
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <img src="https://github.com/user-attachments/assets/b3af4ca9-4090-4cf1-8f2d-4bd7b430c471" alt="Main Interface">
+                    <div class="screenshot-caption">Main Interface</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/user-attachments/assets/4389bc97-c039-4bd9-bbbb-f4643ebbac18" alt="Effect Chain">
+                    <div class="screenshot-caption">Effect Chain</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/user-attachments/assets/3cf4f508-2efd-489f-a4cf-a2db22c7d582" alt="Plugin Selection">
+                    <div class="screenshot-caption">Plugin Library</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/user-attachments/assets/fb51b294-5dc8-4b31-8070-44399c4619e7" alt="Presets">
+                    <div class="screenshot-caption">Presets</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/user-attachments/assets/3e2e7e2e-0cab-4582-b6b2-d9020d8903ee" alt="Recordings">
+                    <div class="screenshot-caption">Recordings</div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/user-attachments/assets/2243d369-de98-4685-afb8-d714f9bebd8f" alt="Settings">
+                    <div class="screenshot-caption">Customization</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2>Get Started Today</h2>
+                <p>Download Amp Rack and transform your mobile device into a professional guitar effects processor</p>
+                <div class="download-options">
+                    <div class="download-card">
+                        <h3>Android</h3>
+                        <p>Available on Google Play Store</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack" target="_blank">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge">
+                        </a>
+                    </div>
+                    <div class="download-card">
+                        <h3>Windows</h3>
+                        <a href="windows.html" class="btn btn-primary" target="_blank">Download Latest Release</a>
+                    </div>
+                    <div class="download-card">
+                        <h3>Linux & Raspberry Pi</h3>
+                        <a href="linux.html" class="btn btn-primary" target="_blank">Download Latest Release</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is Amp Rack?</h3>
+                    <p>Amp Rack is a Guitar Effects Processor for Android that serves as a LV2 Plugin Host. It supports LV2 SDK v1.1 plugins and provides low latency audio processing for guitars, vocals, and other instruments.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I connect my guitar?</h3>
+                    <p>You can connect your guitar using a simple 3.5mm adapter (TRS to 1/4"), your phone's built-in mic, or a USB audio interface. <a href="connect.html" target="_blank">Learn more</a></p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I record my playing?</h3>
+                    <p>Yes! Amp Rack supports recording to WAV, MP3, and Opus formats. You can also record backing tracks and play them on loop for practice.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Does it work with USB interfaces?</h3>
+                    <p>Absolutely! Amp Rack supports USB audio interfaces. When you plug in a USB device, close and reopen the app to automatically detect it, or manually select it in Settings → Audio Devices.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What are presets?</h3>
+                    <p>Presets save your entire effect chain configuration including plugin sequence and parameters. You can create unlimited presets and share them publicly with the community.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is the app really free?</h3>
+                    <p>Yes! Amp Rack is completely free and open source. You can download it from the Play Store or build it yourself from the GitHub repository.</p>
+                </div>
+            </div>
+            <div class="faq-cta">
+                <p>Have more questions?</p>
+                <a href="faq.html" class="btn btn-outline">View Full FAQ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Amp Rack</h4>
+                    <p>Professional guitar & audio effects processor for Android and Desktop platforms.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/djshaji/alana" target="_blank" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#screenshots">Screenshots</a></li>
+                        <li><a href="windows.html">Windows</a></li>
+                        <li><a href="linux.html">Linux</a></li>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/djshaji/alana" target="_blank">GitHub</a></li>
+                        <li><a href="https://amprack.acoustixaudio.org" target="_blank">Official Website</a></li>
+                        <li><a href="https://amprack.acoustixaudio.org/connect.html" target="_blank">Connection Guide</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Download</h4>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.shajikhan.ladspa.amprack" target="_blank">Android (Play Store)</a></li>
+                        <li><a href="https://github.com/djshaji/alana/releases/latest" target="_blank">Windows/Linux/RPi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Amp Rack. Open Source Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
